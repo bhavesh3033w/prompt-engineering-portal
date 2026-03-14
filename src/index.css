@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 215 25% 27%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+
+    --primary: 217 91% 11%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 217 91% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 160 84% 39%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 160 84% 39%;
+
+    --radius: 0.375rem;
+
+    --code-bg: 217 33% 17%;
+    --code-foreground: 210 40% 96%;
+
+    --nav-bg: 217 91% 11%;
+    --nav-foreground: 210 40% 98%;
+
+    --good: 160 84% 39%;
+    --bad: 0 84% 60%;
+
+    --sidebar-background: 217 91% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 160 84% 39%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 22%;
+    --sidebar-ring: 160 84% 39%;
+    --sidebar-muted: 215 16% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight text-primary;
+  }
+}
+
+@layer components {
+  .prose-content {
+    @apply leading-relaxed text-foreground;
+  }
+
+  .prose-content h2 {
+    @apply text-2xl font-bold mt-10 mb-4 pb-2 border-b border-border;
+  }
+
+  .prose-content h3 {
+    @apply text-xl font-semibold mt-8 mb-3;
+  }
+
+  .prose-content p {
+    @apply mb-4 leading-7;
+  }
+
+  .prose-content ul, .prose-content ol {
+    @apply mb-4 pl-6 space-y-2;
+  }
+
+  .prose-content ul {
+    @apply list-disc;
+  }
+
+  .prose-content ol {
+    @apply list-decimal;
+  }
+
+  .prose-content li {
+    @apply leading-7;
+  }
+
+  .prompt-block {
+    @apply bg-[hsl(var(--code-bg))] text-[hsl(var(--code-foreground))] rounded-md p-4 font-mono text-sm leading-6 overflow-x-auto;
+  }
+
+  .good-prompt {
+    @apply border-l-4 border-[hsl(var(--good))];
+  }
+
+  .bad-prompt {
+    @apply border-l-4 border-[hsl(var(--bad))];
+  }
+}
